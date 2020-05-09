@@ -76,7 +76,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_s,      spawn,          SHCMD("st -e top") },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -101,6 +100,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_F2,      quit,          {0} },
+
+	{ 0,                            XF86XK_Explorer,     spawn,          SHCMD("st -e htop") },
+	{ 0,                            XF86XK_LaunchA,      spawn,          {.v = dmenucmd } },
+	{ 0,                            XF86XK_Display,      spawn,          SHCMD("displayselect") },
 };
 
 /* button definitions */
