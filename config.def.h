@@ -5,9 +5,9 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 4;        /* gaps between windows */
+static const unsigned int gappx     = 15;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "SauceCodePro Nerd Font Mono:style=Regular:size=12" };
 static const char dmenufont[]       = "SauceCodePro Nerd Font Mono:style=Regular:size=12";
@@ -23,7 +23,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "🌎", "", "", "", "辶", "", "", "阮" };
+static const char *tags[] = { "🌎", "", "", "", "辶", "", "", "阮", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -36,8 +36,7 @@ static const Rule rules[] = {
 	{ "st-256color", "alsa",        NULL,        0,            1,           1,           -1 },
 	{ "Slack",       NULL,          NULL,        1 << 2,       0,           0,           -1 },
 	{ "Telegram",    NULL,          NULL,        1 << 3,       0,           0,           -1 },
-	{ "zoom",        NULL,          "zoom",      1 << 4,       0,           0,           -1 },
-	{ "Firefox",     NULL,          NULL,        1 << 8,       0,           0,           -1 },
+	{ "zoom",        "zoom",        NULL,        1 << 4,       0,           0,           -1 },
 };
 
 /* layout(s) */
@@ -107,7 +106,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-	/* TAGKEYS(                        XK_9,                      8) */
+	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_F2,      quit,          {0} },
 
 	{ 0,                            XF86XK_Tools,        spawn,          SHCMD("$TERMINAL -n htop -g 100x50 -e zsh -ic htop") },
